@@ -260,7 +260,8 @@ class i18next {
             $translation = array();
 
         // path traversal - last array will be response
-        $paths_arr = explode('.', $key);
+        $key_separator = isset($variables['keySeparator']) ? $variables['keySeparator'] : '.';
+        $paths_arr = explode($key_separator, $key);
 
         while ($path = array_shift($paths_arr)) {
 
