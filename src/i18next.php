@@ -263,7 +263,7 @@ class i18next {
         $key_separator = isset($variables['keySeparator']) ? $variables['keySeparator'] : '.';
         $paths_arr = explode($key_separator, $key);
 
-        while ($path = array_shift($paths_arr)) {
+        while (($path = array_shift($paths_arr)) !== false) {
 
             if (array_key_exists($path, $translation) && is_array($translation[$path]) && count($paths_arr) > 0) {
 
